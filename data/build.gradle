@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
@@ -8,20 +8,14 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.arturszymanski.chargingstats"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
-
-//    signingConfigs {
-//        release {
-//            releaseSigningConfig
-//        }
-//    }
 
     buildTypes {
         release {
@@ -29,30 +23,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 }
 
 preBuild.dependsOn ktlintCheck
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation appDependencies.testImplementation
-    androidTestImplementation appDependencies.androidTestImplementation
-    implementation appDependencies.implementation
-    kapt appDependencies.kapt
-    compileOnly appDependencies.compileOnly
-    api appDependencies.api
+    testImplementation dataDependencies.testImplementation
+    androidTestImplementation dataDependencies.androidTestImplementation
+    implementation dataDependencies.implementation
+    kapt dataDependencies.kapt
+    compileOnly dataDependencies.compileOnly
+    api dataDependencies.api
 }
