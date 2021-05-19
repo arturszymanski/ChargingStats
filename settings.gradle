@@ -1,2 +1,6 @@
 rootProject.name = "Charging Stats"
 include ':app'
+include ':presenter'
+include ':domain'
+include ':data'
+include ':domainData'

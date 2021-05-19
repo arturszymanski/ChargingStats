@@ -1,4 +1,4 @@
-package com.arturszymanski.chargingstats
+package com.devpanther.data
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
