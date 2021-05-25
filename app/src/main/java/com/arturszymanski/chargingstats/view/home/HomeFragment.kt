@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.arturszymanski.chargingstats.databinding.FragmentHomeBinding
 import com.arturszymanski.chargingstats.view.base.BasePresenterFragment
 import com.devpanther.presenter.base.PresenterFactory
-import com.devpanther.presenter.home.HOME_PRESENTER_FACTORY
+import com.devpanther.presenter.di.HOME_PRESENTER_FACTORY
 import com.devpanther.presenter.home.HomePresenter
 import com.devpanther.presenter.home.HomeView
 import dagger.android.support.AndroidSupportInjection

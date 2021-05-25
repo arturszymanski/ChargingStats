@@ -1,7 +1,8 @@
-package com.devpanther.presenter.home
+package com.devpanther.presenter.di
 
 import androidx.lifecycle.ViewModel
 import com.devpanther.presenter.base.PresenterFactory
+import com.devpanther.presenter.home.HomePresenter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
